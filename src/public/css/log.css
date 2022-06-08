@@ -1,0 +1,74 @@
+html,body {
+	height: 100%;
+}
+
+body.asa {
+	background-color: #f7f9fb;
+	font-size: 14px;
+}
+
+.asa .brand {
+	width: 100px;
+	height: 100px;
+	margin: auto;
+}
+
+.asa .index {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.asa .index img {
+	width: 100%;
+	height: 100%;
+}
+
+.asa .brand img {
+	width: 100%;
+	height: 100%;
+}
+
+.asa .card-wrapper {
+	width: 400px;
+}
+
+.asa .card {
+	border-color: transparent;
+	box-shadow: 0 0 40px rgba(0,0,0,.05);
+}
+
+.asa .card.fat {
+	padding: 10px;
+}
+
+.asa .card .card-title {
+	margin-bottom: 30px;
+}
+
+.asa .form-control {
+	border-width: 2.3px;
+}
+
+.asa .form-group label {
+	width: 100%;
+}
+
+.asa .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.asa .margin-top20 {
+	margin-top: 20px;
+}
+
+.asa .no-margin {
+	margin: 0;
+}
+
+.asa .footer {
+	margin: 40px 0;
+	color: #888;
+	text-align: center;
+}

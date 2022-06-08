@@ -43,8 +43,11 @@ app.use((req, res, next)=>{
 
 // ROUTERS
 app.use(require('./routes'));
+<<<<<<< HEAD
 app.use(require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
+=======
+>>>>>>> be2ee6a (osa)
 
 // PUBLIC
 app.use(express.static(path.join(__dirname, 'public')));
