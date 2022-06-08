@@ -44,8 +44,11 @@ app.use((req, res, next)=>{
 // ROUTERS
 app.use(require('./routes'));
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use(require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
+=======
+>>>>>>> be2ee6a (osa)
 =======
 >>>>>>> be2ee6a (osa)
 
