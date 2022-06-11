@@ -58,11 +58,12 @@ router.get('/edit/:id', isLoggedIn, async (req, res)=>{
 
 router.post('/edit/:id', async (req, res)=>{
     const { id } = req.params;
-    const { product_name, product_quantity, product_description } = req.body
+    const { product_name, product_quantity, product_description, product_presentation } = req.body
     const newItem = {
         product_name,
         product_quantity,
-        product_description
+        product_description,
+        product_presentation
     };
     await conn.query('UPDATE inventory set ? WHERE id = ?', [newItem, id]);
     res.redirect('/local');
