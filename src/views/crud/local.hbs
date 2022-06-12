@@ -4,7 +4,7 @@
         <div class="card p-3">
           <div class="e-navlist e-navlist--active-bg">
             <ul class="nav">
-              <li class="nav-item"><a class="nav-link px-2" href="/local" target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
+              <li class="nav-item"><a class="nav-link px-2" href="/local"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
             </ul>
           </div>
         </div>
@@ -51,12 +51,12 @@
                       <tbody>
                         
                         <tr>
-                          <td style="text-align:center;">{{id}}</td>
-                          <td class=""><span style="max-width: 150px;display:flex;text-align:justify;">{{product_name}}</span></td>
-                          <td class=""><span style="max-width: 200px;display:flex;text-align:justify;">{{product_description}}</span></td>
-                          <td class=""><span style="max-width: 200px;display:flex;text-align:justify;">{{product_presentation}}</span></td>
+                          <td style="text-align:center;font-weight:bold;">{{id}}</td>
+                          <td><span style="max-width: 150px;display:flex;text-align:justify;">{{product_name}}</span></td>
+                          <td><span style="max-width: 200px;display:flex;text-align:justify;">{{product_description}}</span></td>
+                          <td><span style="max-width: 200px;display:flex;text-align:justify;">{{product_presentation}}</span></td>
                           <td style="text-align:center;">{{product_quantity}}</td>
-                          <td class="text-center align-middle">
+                          <td style="text-align:center;">
                             <div class="btn-group align-top">
                                 <button class="btn btn-sm btn-outline-secondary badge" type="button"><a href="/edit/{{id}}" style="text-decoration:none">Edit</a></button>
                                 <button class="btn btn-sm btn-outline-secondary badge" type="button"><a class="fa fa-trash" style="text-decoration:none" href="/delete/{{id}}"></a></button>

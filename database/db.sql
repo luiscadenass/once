@@ -10,10 +10,9 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE inventory(
+CREATE TABLE inventary(
     id INT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(50) NOT NULL,
-    product_quantity INT(10) NOT NULL,
-    product_presentation INT(150) NOT NULL,
-    product_description VARCHAR(255) NOT NULL
+    product_description VARCHAR(255) NOT NULL,
+    product_quantity INT(10) NOT NULL
 );
