@@ -58,8 +58,8 @@
                           <td style="text-align:center;">{{product_quantity}}</td>
                           <td style="text-align:center;">
                             <div class="btn-group align-top">
-                                <button class="btn btn-sm btn-outline-secondary badge" type="button"><a href="/edit/{{id}}" style="text-decoration:none">Edit</a></button>
-                                <button class="btn btn-sm btn-outline-secondary badge" type="button"><a class="fa fa-trash" style="text-decoration:none" href="/delete/{{id}}"></a></button>
+                                <button class="btn btn-sm btn-outline-secondary badge" type="button" onclick="window.location.href='/edit/{{id}}'">Edit</button>
+                                <button class="btn btn-sm btn-outline-secondary badge" type="button"  onclick="window.location.href='/delete/{{id}}'"><span class="fa fa-trash"></span></span></button>
                             </div>
                           </td>
                         </tr>

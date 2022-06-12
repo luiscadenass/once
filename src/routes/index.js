@@ -45,6 +45,7 @@ router.post('/local', async (req, res)=>{
         product_presentation,
         product_description
     };
+    // VALIDACIÓN CAMPOS VACÍOS
     if (product_name !== '' && product_quantity !== '' && product_description !== '' && product_presentation !== ''){
         await conn.query('INSERT INTO inventory set ?', [newItem]);
         req.flash('success', 'Guardado  correctamente');
@@ -70,6 +71,7 @@ router.post('/edit/:id', async (req, res)=>{
         product_description,
         product_presentation
     };
+    // VALIDACIÓN CAMPOS VACÍOS
     if (product_name !== '' && product_quantity !== '' && product_description !== '' && product_presentation !== ''){
         await conn.query('UPDATE inventory set ? WHERE id = ?', [newItem, id]);
         req.flash('success', 'Guardado  correctamente');

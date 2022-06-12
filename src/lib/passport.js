@@ -41,21 +41,30 @@ passport.use('local.register', new LocalStrategy({
         email,
         password
     };
+    // VALIDACIÓN CAMPOS VACÍOS
     if (usern !== '' && fullname !== '' && email !== '' && passw !== ''){
+        // VALIDACIÓN USUARIO < 15 CARÁCTERES
         if (newUser.username.length>15) {
             return done(null, false, req.flash('danger', 'El nombre de usuario no debe tener más de 15 carácteres'));
+                // VALIDACIÓN USUARIO >= 3 CARÁCTERES
         } else if (newUser.username.length<3) {
             return done(null, false, req.flash('danger', 'El nombre de usuario debe tener al menos 3 carácteres'));
+                // VALIDACIÓN NOMBRE < 100 CARÁCTERES
         } else if (newUser.fullname.length>100) {
             return done(null, false, req.flash('danger', 'El nombre no debe tener más de 100 carácteres'));
+                // VALICACIÓN NOMBRE <=3 CARÁCTERES
         } else if (newUser.fullname.length<3) {
             return done(null, false, req.flash('danger', 'El nombre debe tener al menos 3 carácteres'));
+                // VALIDACIÓN CORREO < 50 CARÁCTERES
         } else if (newUser.email.length>50) {
             return done(null, false, req.flash('danger', 'El correo eléctronico no debe tener más de 50 carácteres'));
+                // VALIDACIÓN FORMATO CORREO ELÉCTRONICO
         }else if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(newUser.email)) {
             return done(null, false, req.flash('danger', 'Ingrese un correo eléctronico válido'));
+                // VALIDACIÓN CONTRASEÑA >= 8
         } else if (newUser.password.length>8) {
             const rows = await conn.query('SELECT * FROM users WHERE username = ?', [username]);
+            // VALIDACIÓN USUARIO EN USO
             if (rows.length > 0){
                 return done(null, false, req.flash('warning', 'El nombre de usuario ingresado ya se encuentra en uso'));
             } else {
