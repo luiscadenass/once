@@ -6,6 +6,14 @@
 					<div class="brand">
 						<a href="/"><img src="/img/logo.png"></a>
 					</div>
+				{{#if warning}}
+				<div class="alert alert-danger" role="alert">
+						{{warning}}
+					<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				{{/if}}
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Inicio de sesión</h4>
@@ -25,7 +33,7 @@
 
 								<div class="form-group no-margin">
 									<button type="submit" class="btn btn-primary btn-block" style="cursor:pointer">
-										Entrar
+										Iniciar sesión
 									</button>
 								</div>
 								<div class="margin-top20 text-center">
@@ -41,7 +49,6 @@
 			</div>
 		</div>
 	</section>
-
 	<script src="/js/jquery.min.js"></script>
 	<script src="/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/js/log.js"></script>

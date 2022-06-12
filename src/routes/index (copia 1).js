@@ -25,11 +25,11 @@ router.get('/login', (req, res)=>{
 });
 
 router.post('/login', (req, res, next)=>{
-    passport.authenticate('local.login',{
-        successRedirect: 'local',
-        failureRedirect: 'login',
-        failureFlash: true
-        })(req, res, next)
+passport.authenticate('local.login',{
+    successRedirect: 'local',
+    failureRedirect: 'login',
+    failureFlash: true
+    })(req, res, next)
 });
 
 router.get('/local', isLoggedIn, async (req, res)=>{
@@ -45,14 +45,9 @@ router.post('/local', async (req, res)=>{
         product_presentation,
         product_description
     };
-    if (product_name !== '' && product_quantity !== '' && product_description !== '' && product_presentation !== ''){
-        await conn.query('INSERT INTO inventory set ?', [newItem]);
-        req.flash('success', 'Guardado  correctamente');
-        res.redirect('/local');
-    } else {
-        req.flash('danger', 'Por favor, rellene todos los campos');
-        res.redirect('/local');
-    }
+    await conn.query('INSERT INTO inventory set ?', [newItem]);
+    req.flash('success', 'Guardado  correctamente');
+    res.redirect('/local');
 });
 
 router.get('/edit/:id', isLoggedIn, async (req, res)=>{
@@ -70,20 +65,13 @@ router.post('/edit/:id', async (req, res)=>{
         product_description,
         product_presentation
     };
-    if (product_name !== '' && product_quantity !== '' && product_description !== '' && product_presentation !== ''){
-        await conn.query('UPDATE inventory set ? WHERE id = ?', [newItem, id]);
-        req.flash('success', 'Guardado  correctamente');
-        res.redirect('/local');
-    } else {
-        req.flash('danger', 'Por favor, rellene todos los campos');
-        res.redirect('/local');
-    }
+    await conn.query('UPDATE inventory set ? WHERE id = ?', [newItem, id]);
+    res.redirect('/local');
 });
 
 router.get('/delete/:id', isLoggedIn, async (req, res)=>{
     const { id } = req.params;
     await conn.query('DELETE FROM inventory WHERE ID = ?', [id]);
-    req.flash('success', 'Eliminado correctamente');
     res.redirect('/local');
 });
 

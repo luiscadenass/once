@@ -9,7 +9,7 @@ $(function() {
 			paddingRight: 60
 		});
 		$this.after($("<div/>", {
-			html: 'Show',
+			html: 'Mostrar',
 			class: 'btn btn-primary btn-sm',
 			id: 'passeye-toggle-'+i,
 			style: 'position:absolute;right:10px;top:50%;transform:translate(0,-50%);padding: 2px 7px;font-size:12px;cursor:pointer;'
