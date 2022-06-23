@@ -25,8 +25,14 @@
                   </div>
                   {{/if}}   
                 <h5 class="modal-title">Editar artículo</h5>
-
+                <hr>
                 <div class="tab-content pt-3">
+                  <div class="alert alert-info" role="alert">
+                      Por favor no olvide llenar todos los campos!
+                    <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
                   <div class="tab-pane active">
                     <form class="form" action="/edit/{{products.id}}" method="POST">
                       <div class="row">
